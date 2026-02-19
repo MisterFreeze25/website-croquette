@@ -8,35 +8,73 @@
     <script src="responsive.js"></script>
   </head>
   <body>
-  <div
-    class="w-full min-h-screen bg-black px-6 md:px-28 py-5 relative overflow-hidden"
-  >
-    <nav class="flex items-center">
-      <img src="images/logo.png" class="w-80 cursor-pointer" />
-      <ul class="flex-1 text-center">
-        <li class="list-none inline-block px-5">
-          <a href="index.html" class="no-underline text-white px-2"
-            >Acceuille</a
+    <div
+      class="w-full min-h-screen bg-black px-6 md:px-28 py-5 relative overflow-hidden"
+    >
+      <nav class="flex items-center">
+        <img src="images/logo.png" class="w-80 cursor-pointer" />
+        <ul class="flex-1 text-center">
+          <li class="list-none inline-block px-5">
+            <a href="index.html" class="no-underline text-white px-2"
+              >Acceuille</a
+            >
+          </li>
+          <li class="list-none inline-block px-5">
+            <a href="apropos.html" class="no-underline text-white px-2"
+              >À propos</a
+            >
+          </li>
+          <li class="list-none inline-block px-5">
+            <a href="caracteristique.html" class="no-underline text-white px-2"
+              >Caractéristique</a
+            >
+          </li>
+          <li class="list-none inline-block px-5">
+            <a href="contact.html" class="no-underline text-white px-2"
+              >Contact</a
+            >
+          </li>
+        </ul>
+         <img src="images/cart.png" class="w-8 cursor-pointer" />
+      </nav>
+      <div class="flex flex-col items-center justify-center mt-20 md:mt-32">
+        <h2
+          class="text-yellow-300 text-3xl md:text-4xl font-semibold mb-2 text-center"
+        >
+          Contactez-nous
+        </h2>
+        <p class="text-white/40 text-sm mb-12 text-center">
+          On vous répond dans les plus brefs délais.
+        </p>
+
+        <form class="w-full max-w-md flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="Nom complet"
+            class="w-full rounded-lg px-4 py-3 text-sm"
+          />
+          <input
+            type="email"
+            placeholder="Adresse email"
+            class="w-full rounded-lg px-4 py-3 text-sm"
+          />
+          <textarea
+            rows="5"
+            placeholder="Votre message..."
+            class="w-full rounded-lg px-4 py-3 text-sm"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full bg-yellow-300 text-black text-sm font-semibold py-3 rounded-lg"
           >
-        </li>
-        <li class="list-none inline-block px-5">
-          <a href="apropos.html" class="no-underline text-white px-2"
-            >À propos</a
-          >
-        </li>
-        <li class="list-none inline-block px-5">
-          <a href="caracteristique.html" class="no-underline text-white px-2"
-            >Caractéristique</a
-          >
-        </li>
-        <li class="list-none inline-block px-5">
-          <a href="contact.html" class="no-underline text-white px-2"
-            >Contact</a
-          >
-        </li>
-      </ul>
-      <img src="images/cart.png" class="w-8 cursor-pointer" />
-    </nav>
-  </div>
-</body>
+            Envoyer
+          </button>
+        </form>
+      </div>
+      <img
+        src="images/chien.png"
+        class="w-full xl:w-1/4 xl:absolute bottom-0 right-0"
+    </div>
+  </body>
 </html>

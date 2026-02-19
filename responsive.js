@@ -30,9 +30,28 @@ function injectHamburger() {
     a.href = link.href;
     a.textContent = link.textContent.trim();
     a.style.cssText =
-      "color:white;text-decoration:none;font-size:1.5rem;font-weight:500;";
+      "color:white;text-decoration:none;font-size:1.5rem;font-weight:500;transition:color 0.3s ease;";
+
+    a.addEventListener("mouseenter", () => {
+      a.style.color = "#fde047";
+    });
+
+    a.addEventListener("mouseleave", () => {
+      a.style.color = "white";
+    });
+
     a.addEventListener("click", closeMenu);
     overlay.appendChild(a);
+
+    link.style.transition = "color 0.3s ease";
+
+    link.addEventListener("mouseenter", () => {
+      link.style.color = "#fde047";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.color = "white";
+    });
   });
 
   document.body.appendChild(overlay);
@@ -111,7 +130,9 @@ function applyResponsive() {
     if (isDesktop) {
       dogImg.style.cssText = "position:absolute;width:25%;bottom:0;right:0;";
     } else {
-      dogImg.style.cssText = `display:block;width:${isMobile ? "85%" : "55%"};margin:2rem auto 0;position:relative;`;
+      dogImg.style.cssText = `display:block;width:${
+        isMobile ? "85%" : "55%"
+      };margin:2rem auto 0;position:relative;`;
     }
   }
 }
@@ -120,4 +141,5 @@ document.addEventListener("DOMContentLoaded", () => {
   injectHamburger();
   applyResponsive();
 });
+
 window.addEventListener("resize", applyResponsive);

@@ -5,27 +5,32 @@ function injectHamburger() {
   btn.id = "hamburger-btn";
   btn.setAttribute("aria-label", "Ouvrir le menu");
   btn.innerHTML = `<span></span><span></span><span></span>`;
-  btn.style.cssText = "display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:4px;margin-left:16px;";
+  btn.style.cssText =
+    "display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:4px;margin-left:16px;";
 
-  btn.querySelectorAll("span").forEach(s => {
-    s.style.cssText = "display:block;width:24px;height:2px;background:white;border-radius:2px;transition:transform 0.3s,opacity 0.3s;";
+  btn.querySelectorAll("span").forEach((s) => {
+    s.style.cssText =
+      "display:block;width:24px;height:2px;background:white;border-radius:2px;transition:transform 0.3s,opacity 0.3s;";
   });
 
   const overlay = document.createElement("div");
   overlay.id = "mobile-overlay";
-  overlay.style.cssText = "display:none;position:fixed;inset:0;background:rgba(0,0,0,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;";
+  overlay.style.cssText =
+    "display:none;position:fixed;inset:0;background:rgba(0,0,0,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;";
 
   const closeBtn = document.createElement("button");
   closeBtn.innerHTML = "&#10005;";
-  closeBtn.style.cssText = "position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;line-height:1;";
+  closeBtn.style.cssText =
+    "position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;line-height:1;";
   closeBtn.addEventListener("click", closeMenu);
   overlay.appendChild(closeBtn);
 
-  document.querySelectorAll("nav ul li a").forEach(link => {
+  document.querySelectorAll("nav ul li a").forEach((link) => {
     const a = document.createElement("a");
     a.href = link.href;
     a.textContent = link.textContent.trim();
-    a.style.cssText = "color:white;text-decoration:none;font-size:1.5rem;font-weight:500;";
+    a.style.cssText =
+      "color:white;text-decoration:none;font-size:1.5rem;font-weight:500;";
     a.addEventListener("click", closeMenu);
     overlay.appendChild(a);
   });
@@ -51,7 +56,9 @@ function injectHamburger() {
     b3.style.transform = "none";
   }
 
-  btn.addEventListener("click", () => overlay.style.display === "flex" ? closeMenu() : openMenu());
+  btn.addEventListener("click", () =>
+    overlay.style.display === "flex" ? closeMenu() : openMenu(),
+  );
 }
 
 function applyResponsive() {
@@ -69,15 +76,20 @@ function applyResponsive() {
   const dogImg = document.querySelector("img[src='images/chien.png']");
   const hamburgerBtn = document.getElementById("hamburger-btn");
 
-  if (nav) nav.style.cssText = "display:flex;align-items:center;justify-content:space-between;";
+  if (nav)
+    nav.style.cssText =
+      "display:flex;align-items:center;justify-content:space-between;";
 
-  if (logo) logo.style.width = isMobile ? "120px" : isTablet ? "170px" : "320px";
+  if (logo)
+    logo.style.width = isMobile ? "120px" : isTablet ? "170px" : "320px";
 
-  if (navUl) navUl.style.cssText = isDesktop
-    ? "display:flex;flex:1;justify-content:center;list-style:none;margin:0;padding:0;"
-    : "display:none;";
+  if (navUl)
+    navUl.style.cssText = isDesktop
+      ? "display:flex;flex:1;justify-content:center;list-style:none;margin:0;padding:0;"
+      : "display:none;";
 
-  if (cartImg) cartImg.style.cssText = "display:block;width:32px;cursor:pointer;";
+  if (cartImg)
+    cartImg.style.cssText = "display:block;width:32px;cursor:pointer;";
 
   if (hamburgerBtn) hamburgerBtn.style.display = isDesktop ? "none" : "flex";
 
@@ -104,5 +116,8 @@ function applyResponsive() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => { injectHamburger(); applyResponsive(); });
+document.addEventListener("DOMContentLoaded", () => {
+  injectHamburger();
+  applyResponsive();
+});
 window.addEventListener("resize", applyResponsive);
